@@ -6,17 +6,19 @@
 /*   By: mgarabei <mgarabei@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 12:46:08 by mgarabei          #+#    #+#             */
-/*   Updated: 2023/05/31 11:31:44 by mgarabei         ###   ########.fr       */
+/*   Updated: 2024/01/22 14:08:10 by mgarabei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-
-# include <string.h>
-# include <stdlib.h>
+# include <stdio.h>
 # include <unistd.h>
 # include <stdio.h>
+# include <stdarg.h>
+# include <stddef.h>
+# include <string.h>
+# include <stdlib.h>
 
 typedef struct s_list
 {
@@ -24,6 +26,7 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
+//basic libft
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
 int					ft_isalnum(int c);
@@ -69,4 +72,15 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
+//ft_printf
+int					ft_char(char c);
+int					ft_str(char *args);
+int					ft_nbr(int number);
+int					ft_unsigned_int(unsigned int u);
+int					ft_hex(unsigned int x, char x_case);
+int					ft_ptr(size_t pointer);
+int					ft_printf(const char *string, ...);
+
+//gnl
+
 #endif
